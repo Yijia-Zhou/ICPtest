@@ -24,17 +24,20 @@ rssurls = ['http://www.nature.com/nature/rdf/news/most-recent',
            'http://rss.medicalnewstoday.com/biology-biochemistry.xml',
            'http://www.sciencemag.org/rss/express.xml']
 
+
 class ScienceNewsDB(object):
+
     def __init__(self, rssurls):
         self.rssurls = rssurls
         self.update_news()
-        #bug mock 
+        #bug fixed 
 
     def update_news(self):
         self.news = retrieve_science_news(self.rssurls)
 
     def get_science_news(self, number):
         return random.sample(self.news, number)
+
 
 def parse_rss(rssurl):
     rssfeeds = []
@@ -52,9 +55,11 @@ def parse_rss(rssurl):
     print('Updated: ' + rssurl)
     return rssfeeds
 
+
 def retrieve_science_news(rssurls):
     pool = ThreadPool(4)
     results = pool.map(parse_rss, rssurls)
     return [item for result in results for item in result]
+
 
 db = ScienceNewsDB(rssurls)
