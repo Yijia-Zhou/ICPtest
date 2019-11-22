@@ -9,7 +9,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 import feedparser
 
 socket.setdefaulttimeout(15)
-# implement needed 
+# implement completed 
 rssurls = ['http://www.nature.com/nature/rdf/news/most-recent',
            'http://feeds.nature.com/NatureBiologicalSciencesResearch',
            'http://feeds.newscientist.com/life',
