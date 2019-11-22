@@ -9,7 +9,7 @@ from multiprocessing.dummy import Pool as ThreadPool
 import feedparser
 
 socket.setdefaulttimeout(15)
-# implement completed 
+# implement needed 
 rssurls = ['http://www.nature.com/nature/rdf/news/most-recent',
            'http://feeds.nature.com/NatureBiologicalSciencesResearch',
            'http://feeds.newscientist.com/life',
@@ -28,7 +28,7 @@ class ScienceNewsDB(object):
     def __init__(self, rssurls):
         self.rssurls = rssurls
         self.update_news()
-        #bug fixed 
+        #bug mock 
 
     def update_news(self):
         self.news = retrieve_science_news(self.rssurls)
